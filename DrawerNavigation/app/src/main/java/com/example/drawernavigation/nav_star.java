@@ -1,4 +1,4 @@
-package com.example.listviewmoreframelayout;
+package com.example.drawernavigation;
 
 import android.os.Bundle;
 
@@ -7,18 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MercadoLivreFragment#newInstance} factory method to
+ * Use the {@link nav_star#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MercadoLivreFragment extends Fragment {
-
-    WebView ml;
+public class nav_star extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +24,7 @@ public class MercadoLivreFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MercadoLivreFragment() {
+    public nav_star() {
         // Required empty public constructor
     }
 
@@ -39,11 +34,11 @@ public class MercadoLivreFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MercadoLivreFragment.
+     * @return A new instance of fragment nav_star.
      */
     // TODO: Rename and change types and number of parameters
-    public static MercadoLivreFragment newInstance(String param1, String param2) {
-        MercadoLivreFragment fragment = new MercadoLivreFragment();
+    public static nav_star newInstance(String param1, String param2) {
+        nav_star fragment = new nav_star();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,19 +59,6 @@ public class MercadoLivreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_mercado_livre, container, false);
-
-        ml = (WebView) v.findViewById(R.id.mercadolivre);
-
-        WebSettings ws = ml.getSettings();
-
-        ws.setJavaScriptEnabled(true);
-        ws.setSupportZoom(false);
-
-        ml.setWebViewClient(new WebViewClient());
-
-        ml.loadUrl("https://www.mercadolivre.com.br/");
-
-        return v;
+        return inflater.inflate(R.layout.fragment_nav_star, container, false);
     }
 }

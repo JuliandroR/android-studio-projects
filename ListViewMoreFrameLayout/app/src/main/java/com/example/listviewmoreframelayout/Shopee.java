@@ -66,7 +66,7 @@ public class Shopee extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_shopee, container, false);
 
-        shopee = (WebView) v.findViewById(R.id.AmazonView);
+        shopee = (WebView) v.findViewById(R.id.shopee);
 
         WebSettings ws = shopee.getSettings();
 

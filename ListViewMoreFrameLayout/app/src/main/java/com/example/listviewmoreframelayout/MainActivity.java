@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(meuArrayAdapter);
 
-        fragmentManager.beginTransaction().replace(R.id.framelayout,
-                new AmazonFragment()).commit();
+//        fragmentManager.beginTransaction().add(R.id.framelayout,
+//                new AmazonFragment()).commit();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

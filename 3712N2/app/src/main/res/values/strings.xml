@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">3712N2</string>
+
+    <string-array name="campus_ifms">
+        <item>Aquidauana</item>
+        <item>Corumbá</item>
+        <item>Coxim</item>
+        <item>Jardim</item>
+        <item>Naviraí</item>
+        <item>Nova Andradina</item>
+        <item>Ponta Porã</item>
+        <item>Três Lagoas</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

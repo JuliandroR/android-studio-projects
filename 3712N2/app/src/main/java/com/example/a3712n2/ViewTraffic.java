@@ -1,4 +1,4 @@
-package com.example.listviewmoreframelayout;
+package com.example.a3712n2;
 
 import android.os.Bundle;
 
@@ -13,12 +13,13 @@ import android.webkit.WebViewClient;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MercadoLivreFragment#newInstance} factory method to
+ * Use the {@link ViewTraffic#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MercadoLivreFragment extends Fragment {
+public class ViewTraffic extends Fragment {
 
-    WebView ml;
+    WebView webview;
+    String url;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +30,7 @@ public class MercadoLivreFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MercadoLivreFragment() {
+    public ViewTraffic() {
         // Required empty public constructor
     }
 
@@ -39,11 +40,11 @@ public class MercadoLivreFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MercadoLivreFragment.
+     * @return A new instance of fragment ViewTraffic.
      */
     // TODO: Rename and change types and number of parameters
-    public static MercadoLivreFragment newInstance(String param1, String param2) {
-        MercadoLivreFragment fragment = new MercadoLivreFragment();
+    public static ViewTraffic newInstance(String param1, String param2) {
+        ViewTraffic fragment = new ViewTraffic();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,19 +65,29 @@ public class MercadoLivreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_mercado_livre, container, false);
+        View view =  inflater.inflate(R.layout.fragment_view_traffic, container, false);
 
-        ml = (WebView) v.findViewById(R.id.mercadolivre);
+        //Recebendo conteúdo do Bundle
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            url = bundle.getString("url"); //acesso pela key.
+        }
 
-        WebSettings ws = ml.getSettings();
+        //Configurando o webView
+        webview = view.findViewById(R.id.view_traffic);
 
+        //receber a entidade de configuração
+        WebSettings ws = webview.getSettings();
+
+        //setar valores JavaScript e Zoom;
         ws.setJavaScriptEnabled(true);
         ws.setSupportZoom(false);
 
-        ml.setWebViewClient(new WebViewClient());
+        //acessar a URL
+        webview.loadUrl(url);
 
-        ml.loadUrl("https://www.mercadolivre.com.br/");
+        webview.setWebViewClient(new WebViewClient());
 
-        return v;
+        return view;
     }
 }
