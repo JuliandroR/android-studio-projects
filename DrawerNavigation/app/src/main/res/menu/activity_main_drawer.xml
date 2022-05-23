@@ -21,5 +21,10 @@
             android:id="@+id/nav_star"
             android:icon="@android:drawable/btn_star_big_on"
             android:title="Star" />
+
+        <item
+            android:id="@+id/nav_home2"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:title="Star" />
     </group>
 </menu>
